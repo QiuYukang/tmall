@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--Spring配置文件-->
+
+    <!-- 1. 配置自动扫描的包(除了带有Controller注解的)-->
+    <context:component-scan base-package="com.ssm.tmall">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!-- 2. 配置数据源-->
+    <!--    2.1 引入外部的数据库配置文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!--    2.2 配置数据源bean, 读取数据库配置文件中的参数信息-->
+    <bean id="dataSource"
+          class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          p:user = "${jdbc.username}"
+          p:password="${jdbc.password}"
+          p:jdbcUrl="${jdbc.url}"
+          p:driverClass="${jdbc.driver}"
+
+          p:maxPoolSize="30"
+          p:minPoolSize="10"
+          p:autoCommitOnClose="false"
+          p:checkoutTimeout="10000"
+          p:acquireRetryAttempts="2"
+    />
+
+    <!-- 3. 配置MyBatis-->
+    <!--    3.1 配置SqlSessionFactory bean, 设置数据源信息和mapper文件位置(待配置分页插件)-->
+    <bean id="sqlSessionFactoryBean"
+          class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--配置数据源-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--配置MyBatis全局配置文件-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <!--配置用于SQL语句映射的mapper文件-->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+        <!--配置拦截器插件-->
+        <property name="plugins">
+            <array>
+              <!--配置分页插件-->
+              <bean class="com.github.pagehelper.PageInterceptor">
+                  <property name="properties">
+                      <value>
+                          
+                      </value>
+                  </property>
+              </bean>
+            </array>
+        </property>
+    </bean>
+    <!--    3.2 MyBatis的DAO接口扫描-->
+    <bean id="mapperScannerConfigurer"
+          class="org.mybatis.spring.mapper.MapperScannerConfigurer"
+          p:basePackage="com.ssm.tmall.dao"
+    />
+
+
+    <!--配置文件上传解析器-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--指定文件上传的总大小不超过20M-->
+        <property name="maxUploadSize" value="20000000"/>
+        <property name="defaultEncoding" value="utf-8"/>
+    </bean>
+
+</beans>

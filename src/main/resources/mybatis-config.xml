@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--XML 配置文件（configuration XML）中包含了对 MyBatis 系统的核心设置，
+包含获取数据库连接实例的数据源（DataSource）和决定事务作用域和控制方式的
+事务管理器（TransactionManager）。-->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!--MyBatis全局配置文件-->
+
+<configuration>
+
+    <!--全局参数设置-->
+    <settings>
+        <!--开启驼峰命名转换-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+
+        <!--获取数据库自增主键值-->
+        <setting name="useGeneratedKeys" value="true" />
+
+    </settings>
+
+</configuration>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    namespace:指定为DAO接口类的全类名
+    id:SQL语句的唯一标识,接口方法名
+    resultType:查询语句返回的结果类型，可以使用别名处理器简化书写
+-->
+<mapper namespace="com.ssm.tmall.dao.CategoryDao">
+    <!--获取分类表中的所有类别信息（使用分页插件）-->
+    <select id="getCategoryList" resultType="com.ssm.tmall.pojo.Category">
+        select * from category order by id desc
+    </select>
+
+    <!--通过 id 获取类别信息-->
+    <select id="getCategoryById" resultType="com.ssm.tmall.pojo.Category">
+        select * from category where id = #{id};
+    </select>
+
+    <!--手动实现分页-->
+    <!--&lt;!&ndash;获取总记录条数&ndash;&gt;-->
+    <!--<select id="getTotal" resultType="int">-->
+        <!--select count(*) from category-->
+    <!--</select>-->
+
+    <!--&lt;!&ndash;按照分页获取分类表中的所有类别信息&ndash;&gt;-->
+    <!--<select id="getCategoryList" resultType="com.ssm.tmall.pojo.PropertyDao">-->
+        <!--select * from category order by id desc-->
+        <!--<if test="start != null and count != null">-->
+            <!--limit #{start}, #{count}-->
+        <!--</if>-->
+    <!--</select>-->
+
+    <!--插入一个新的分类(需要设置useGeneratedKeys和keyProperty属性，确保自动生成的id可以被获取到)-->
+    <insert id="addCategory" keyProperty="id" useGeneratedKeys="true" parameterType="com.ssm.tmall.pojo.Category">
+      insert into category (name) values (#{name})
+    </insert>
+
+    <!--删除指定 id 的分类-->
+    <delete id="deleteCategoryById">
+        delete from category where id = #{id}
+    </delete>
+
+    <!--修改指定 id 的分类信息-->
+    <update id="updateCategory">
+        update category set name = #{name} where id = #{id}
+    </update>
+</mapper>

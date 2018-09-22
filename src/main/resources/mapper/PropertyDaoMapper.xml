@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    namespace:指定为DAO接口类的全类名
+    id:SQL语句的唯一标识,接口方法名
+    resultType:查询语句返回的结果类型，可以使用别名处理器简化书写
+-->
+<mapper namespace="com.ssm.tmall.dao.PropertyDao">
+    <!--获取对应类别的所有属性-->
+    <select id="getAll" resultType="com.ssm.tmall.pojo.Property">
+      select * from property where cid = #{cid}  order by id desc
+    </select>
+
+    <!--获取指定 id 的属性-->
+    <select id="get" resultType="com.ssm.tmall.pojo.Property">
+        select * from property where id = #{id};
+    </select>
+
+    <!--删除指定 id 的属性-->
+    <delete id="delete">
+        delete from property where id = #{id}
+    </delete>
+
+    <!--添加一个新的属性（服务部分需要做数据校验/关联外键cid）-->
+    <insert id="add" useGeneratedKeys="true" keyProperty="id" parameterType="com.ssm.tmall.pojo.Property">
+        insert into property(name, cid) values(#{name}, #{cid})
+    </insert>
+
+    <!--更新属性名字-->
+    <update id="update">
+        update property set name = #{name} where id = #{id} and cid = #{cid}
+    </update>
+</mapper>
