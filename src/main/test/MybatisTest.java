@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Mybatis 逆向工程
+ * Mybatis 逆向工程--不可随便运行
  */
 
 public class MybatisTest {
