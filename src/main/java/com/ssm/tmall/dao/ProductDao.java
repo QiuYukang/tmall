@@ -2,11 +2,8 @@ package com.ssm.tmall.dao;
 
 import com.ssm.tmall.pojo.Product;
 import com.ssm.tmall.pojo.ProductExample;
-import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
-@Repository
 public interface ProductDao {
     int deleteByPrimaryKey(Integer id);
 

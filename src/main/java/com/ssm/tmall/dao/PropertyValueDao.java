@@ -2,11 +2,8 @@ package com.ssm.tmall.dao;
 
 import com.ssm.tmall.pojo.PropertyValue;
 import com.ssm.tmall.pojo.PropertyValueExample;
-import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
-@Repository
 public interface PropertyValueDao {
     int deleteByPrimaryKey(Integer id);
 

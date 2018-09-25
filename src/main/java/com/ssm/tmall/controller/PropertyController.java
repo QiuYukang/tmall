@@ -36,7 +36,7 @@ public class PropertyController {
     }
 
     @RequestMapping(value = "/admin_property_list/{cid}", method = RequestMethod.GET)
-    public String toListPage(@PathVariable("cid") Integer cid,
+    public String get(@PathVariable("cid") Integer cid,
                              Model model,
                              @RequestParam(required = false, defaultValue = "1") Integer start) {
         // 调用分页插件

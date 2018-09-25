@@ -2,11 +2,8 @@ package com.ssm.tmall.dao;
 
 import com.ssm.tmall.pojo.User;
 import com.ssm.tmall.pojo.UserExample;
-import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
-@Repository
 public interface UserDao {
     int deleteByPrimaryKey(Integer id);
 

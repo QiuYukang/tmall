@@ -1,4 +1,4 @@
-package com.ssm.tmall.serviceImpl;
+package com.ssm.tmall.service.Impl;
 
 import com.ssm.tmall.dao.PropertyDao;
 import com.ssm.tmall.pojo.Property;

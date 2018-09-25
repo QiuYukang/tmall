@@ -46,59 +46,59 @@
         </javaClientGenerator>
 
         <!--生成对应表及类名-->
-        <table tableName="product" domainObjectName="Product" mapperName="ProductDao"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="true"
-               selectByExampleQueryId="false">
-            <property name="my.isgen.usekeys" value="true"/>
-            <property name="useActualColumnNames" value="true"/>
-            <generatedKey column="id" sqlStatement="JDBC"/>
-        </table>
+        <!--<table tableName="product" domainObjectName="Product" mapperName="ProductDao"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="true"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<property name="my.isgen.usekeys" value="true"/>-->
+            <!--<property name="useActualColumnNames" value="true"/>-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
 
-        <table tableName="order_" domainObjectName="Order" mapperName="OrderDao"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="true"
-               selectByExampleQueryId="false">
-            <property name="my.isgen.usekeys" value="true"/>
-            <property name="useActualColumnNames" value="true"/>
-            <generatedKey column="id" sqlStatement="JDBC"/>
-        </table>
+        <!--<table tableName="order_" domainObjectName="Order" mapperName="OrderDao"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="true"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<property name="my.isgen.usekeys" value="true"/>-->
+            <!--<property name="useActualColumnNames" value="true"/>-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
 
-        <table tableName="orderitem" domainObjectName="OrderItem" mapperName="OrderItemDao"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="true"
-               selectByExampleQueryId="false">
-            <property name="my.isgen.usekeys" value="true"/>
-            <property name="useActualColumnNames" value="true"/>
-            <generatedKey column="id" sqlStatement="JDBC"/>
-        </table>
+        <!--<table tableName="orderitem" domainObjectName="OrderItem" mapperName="OrderItemDao"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="true"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<property name="my.isgen.usekeys" value="true"/>-->
+            <!--<property name="useActualColumnNames" value="true"/>-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
 
-        <table tableName="productimage" domainObjectName="ProductImage" mapperName="ProductImageDao"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="true"
-               selectByExampleQueryId="false">
-            <property name="my.isgen.usekeys" value="true"/>
-            <property name="useActualColumnNames" value="true"/>
-            <generatedKey column="id" sqlStatement="JDBC"/>
-        </table>
+        <!--<table tableName="productimage" domainObjectName="ProductImage" mapperName="ProductImageDao"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="true"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<property name="my.isgen.usekeys" value="true"/>-->
+            <!--<property name="useActualColumnNames" value="true"/>-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
 
-        <table tableName="propertyvalue" domainObjectName="PropertyValue" mapperName="PropertyValueDao"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="true"
-               selectByExampleQueryId="false">
-            <property name="my.isgen.usekeys" value="true"/>
-            <property name="useActualColumnNames" value="true"/>
-            <generatedKey column="id" sqlStatement="JDBC"/>
-        </table>
+        <!--<table tableName="propertyvalue" domainObjectName="PropertyValue" mapperName="PropertyValueDao"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="true"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<property name="my.isgen.usekeys" value="true"/>-->
+            <!--<property name="useActualColumnNames" value="true"/>-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
 
-        <table tableName="review" domainObjectName="Review" mapperName="ReviewDao"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="true"
-               selectByExampleQueryId="false">
-            <property name="my.isgen.usekeys" value="true"/>
-            <property name="useActualColumnNames" value="true"/>
-            <generatedKey column="id" sqlStatement="JDBC"/>
-        </table>
+        <!--<table tableName="review" domainObjectName="Review" mapperName="ReviewDao"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="true"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<property name="my.isgen.usekeys" value="true"/>-->
+            <!--<property name="useActualColumnNames" value="true"/>-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
 
         <table tableName="user" domainObjectName="User" mapperName="UserDao"
                enableCountByExample="false" enableUpdateByExample="false"
@@ -108,7 +108,6 @@
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
-
 
     </context>
 </generatorConfiguration>

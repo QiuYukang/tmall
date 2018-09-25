@@ -17,4 +17,11 @@ public interface ProductService {
      * @return 产品列表
      */
     List<Product> getListBycId(Integer cId);
+
+    /**
+     * 给产品设置第一张图片
+     *
+     * @param product 产品对象
+     */
+    void setFirstProductIamge(Product product);
 }

@@ -2,11 +2,8 @@ package com.ssm.tmall.dao;
 
 import com.ssm.tmall.pojo.OrderItem;
 import com.ssm.tmall.pojo.OrderItemExample;
-import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
-@Repository
 public interface OrderItemDao {
     int deleteByPrimaryKey(Integer id);
 

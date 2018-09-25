@@ -1,6 +1,9 @@
 package com.ssm.tmall.pojo;
 
 import java.util.Date;
+import java.util.List;
+
+import com.ssm.tmall.service.OrderService;
 
 public class Order {
     private Integer id;
@@ -28,6 +31,43 @@ public class Order {
     private Integer uid;
 
     private String status;
+
+    // 非数据库字段
+    // 订单下的订单项目列表
+    private List<OrderItem> items;
+
+    // 订单总金额
+    private Float toatlMoney;
+
+    // 购买的物品总数量
+    private Integer totalNumber;
+
+    // 用户名
+    private User user;
+
+    public List<OrderItem> getItems() {
+        return items;
+    }
+
+    public void setItems(List<OrderItem> items) {
+        this.items = items;
+    }
+
+    public Float getToatlMoney() {
+        return toatlMoney;
+    }
+
+    public void setToatlMoney(Float toatlMoney) {
+        this.toatlMoney = toatlMoney;
+    }
+
+    public Integer getTotalNumber() {
+        return totalNumber;
+    }
+
+    public void setTotalNumber(Integer totalNumber) {
+        this.totalNumber = totalNumber;
+    }
 
     public Integer getId() {
         return id;
@@ -131,5 +171,40 @@ public class Order {
 
     public void setStatus(String status) {
         this.status = status == null ? null : status.trim();
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    // 获取订单状态的中文描述
+    public String getStatusDesc() {
+        String desc = "未知";
+
+        switch (this.status) {
+            case OrderService.waitPay:
+                desc = "待付款";
+                break;
+            case OrderService.waitDelivery:
+                desc = "待发货";
+                break;
+            case OrderService.waitConfirm:
+                desc = "待收货";
+                break;
+            case OrderService.finish:
+                desc = "已完成";
+                break;
+            case OrderService.delete:
+                desc = "已删除";
+                break;
+            default:
+                desc = "未知";
+        }
+
+        return desc;
     }
 }

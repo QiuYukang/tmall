@@ -96,5 +96,11 @@ $(function(){
 })
 </script>	
 </head>
+
+<%--用于转换post请求为DELETE请求的表格--%>
+<form action="" method="post" id="delForm">
+	<input type="hidden" name="_method" value="DELETE">
+</form>
+
 <body>
 
