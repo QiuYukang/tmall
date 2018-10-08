@@ -1,6 +1,7 @@
 package com.ssm.tmall.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class Product {
     private Integer id;
@@ -20,8 +21,50 @@ public class Product {
     private Date createDate;
 
     // 非数据库字段
+    // 所属分类
+    private Category category;
     // 产品图片
     private ProductImage firstProductImage;
+    // 单个产品图片集合
+    private List<ProductImage> productSingleImages;
+    // 详情图片集合
+    private List<ProductImage> productDetailImages;
+    // 销量
+    private int saleCount;
+    // 累计评价数量
+    private int reviewCount;
+
+    public List<ProductImage> getProductSingleImages() {
+        return productSingleImages;
+    }
+
+    public void setProductSingleImages(List<ProductImage> productSingleImages) {
+        this.productSingleImages = productSingleImages;
+    }
+
+    public List<ProductImage> getProductDetailImages() {
+        return productDetailImages;
+    }
+
+    public void setProductDetailImages(List<ProductImage> productDetailImages) {
+        this.productDetailImages = productDetailImages;
+    }
+
+    public int getSaleCount() {
+        return saleCount;
+    }
+
+    public void setSaleCount(int saleCount) {
+        this.saleCount = saleCount;
+    }
+
+    public int getReviewCount() {
+        return reviewCount;
+    }
+
+    public void setReviewCount(int reviewCount) {
+        this.reviewCount = reviewCount;
+    }
 
     public ProductImage getFirstProductImage() {
         return firstProductImage;
@@ -93,5 +136,20 @@ public class Product {
 
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "promotePrice=" + promotePrice +
+                '}';
     }
 }

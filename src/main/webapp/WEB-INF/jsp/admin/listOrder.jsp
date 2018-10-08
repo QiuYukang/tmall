@@ -49,8 +49,8 @@
             <c:forEach items="${orders}" var="order">
                 <tr>
                     <td>${order.id}</td>
-                    <td>${order.status}</td>
-                    <td>￥<fmt:formatNumber type="number" value="${order.toatlMoney}" minFractionDigits="2"/></td>
+                    <td>${order.statusDesc}</td>
+                    <td>￥<fmt:formatNumber type="number" value="${order.total}" minFractionDigits="2"/></td>
                     <td align="center">${order.totalNumber}</td>
                     <td align="center">${order.user.name}</td>
 
@@ -74,7 +74,7 @@
 
                         <div  class="orderPageOrderItem">
                             <table width="800px" align="center" class="orderPageOrderItemTable">
-                                <c:forEach items="${order.items}" var="item">
+                                <c:forEach items="${order.orderItems}" var="item">
                                     <tr>
                                         <td align="left">
                                             <img width="40px" height="40px" src="img/productSingle/${item.product.firstProductImage.id}.jpg">

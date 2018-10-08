@@ -18,4 +18,12 @@ public interface OrderItemDao {
     int updateByPrimaryKeySelective(OrderItem record);
 
     int updateByPrimaryKey(OrderItem record);
+
+    /**
+     * 获取指定产品的销售数量
+     *
+     * @param pid 产品 id
+     * @return
+     */
+    Integer getSaleCount(Integer pid);
 }

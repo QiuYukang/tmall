@@ -42,4 +42,26 @@ public class User {
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
     }
+
+    /**
+     * 获取匿名名字 真实名字中间带有 * 号
+     *
+     * @return
+     */
+    public String getAnonymousName() {
+        // ---如果是中文名字如何处理？？？？？
+        if (null == this.name)
+            return null;
+        if (this.name.length() <= 1)
+            return "*";
+        if (this.name.length() == 2)
+            return name.substring(0, 1) + "*";
+
+        char[] nameArray = this.name.toCharArray();
+        for (int i = 1; i < nameArray.length - 1; i++) {
+            nameArray[i] = '*';
+        }
+
+        return new String(nameArray);
+    }
 }

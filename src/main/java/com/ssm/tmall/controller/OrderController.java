@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -35,7 +36,11 @@ public class OrderController {
 
     @RequestMapping(value = "admin_order_delivery/{id}")
     public String delivery(@PathVariable("id") Integer id){
+        Order order = orderService.get(id);
+        order.setStatus(OrderService.waitConfirm);
+        order.setDeliveryDate(new Date());
+        orderService.update(order);
 
-        return "";
+        return "redirect:/admin_order_list";
     }
 }

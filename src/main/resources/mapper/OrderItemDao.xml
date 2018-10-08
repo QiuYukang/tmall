@@ -128,4 +128,9 @@
       number = #{number,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <!--自己添加的接口：获取指定产品的销售数量-->
+  <select id="getSaleCount" resultType="int">
+    select ifnull(sum(number), 0) from orderitem where pid = #{pid}
+  </select>
 </mapper>

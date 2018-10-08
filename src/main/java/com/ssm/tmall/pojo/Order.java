@@ -34,10 +34,10 @@ public class Order {
 
     // 非数据库字段
     // 订单下的订单项目列表
-    private List<OrderItem> items;
+    private List<OrderItem> orderItems;
 
     // 订单总金额
-    private Float toatlMoney;
+    private Float total;
 
     // 购买的物品总数量
     private Integer totalNumber;
@@ -45,20 +45,20 @@ public class Order {
     // 用户名
     private User user;
 
-    public List<OrderItem> getItems() {
-        return items;
+    public List<OrderItem> getOrderItems() {
+        return orderItems;
     }
 
-    public void setItems(List<OrderItem> items) {
-        this.items = items;
+    public void setOrderItems(List<OrderItem> orderItems) {
+        this.orderItems = orderItems;
     }
 
-    public Float getToatlMoney() {
-        return toatlMoney;
+    public Float getTotal() {
+        return total;
     }
 
-    public void setToatlMoney(Float toatlMoney) {
-        this.toatlMoney = toatlMoney;
+    public void setTotal(Float total) {
+        this.total = total;
     }
 
     public Integer getTotalNumber() {
